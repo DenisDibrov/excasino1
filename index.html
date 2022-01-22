@@ -1,0 +1,2482 @@
+<html lang="ru" class="h-100"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Trix — играть онлайн — раздача каждый день</title>
+<meta name="description" content="Trix официальный сайт приглашает любимых игроков, лучшие промокоды и раздачи от сайта Trix. Cоставляйте уникальную стратегию игры и выигрывайте в популярные игры">
+<meta name="author" content="Trix">
+<meta name="csrf-token" content="5z7h1boZzN52fmTHEvZxvBYOCNFIVJ95mg4AZIls">
+<meta name="action-page" content="mines">
+<meta name="centrifugo-url" content="wss://c.trix.love/connection/websocket">
+<meta name="centrifugo-token" content="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwIn0.FnVMP29ifS7WXNBkRGy5s3vDJxLgUgwxcItkOXshOGg">
+<meta name="user" content="0">
+<meta name="role" content="0">
+<meta name="keywords" content="Trix cabura кабура nvuti nvuti com nvuti регистрация игра деньги игра заработок игры с выводом игры с выводом денег нвути нвути сайт онлайн игры с выводом игры с деньгами рубликс драгон мани rublix dragon money 1dice">
+<link rel="stylesheet" href="/css/app.css?prod=6">
+<link rel="shortcut icon" href="/images/games/dice.png" type="image/png">
+<script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/TDBxTlSsKAUm3tSIa0fwIqNu/recaptcha__ru.js" crossorigin="anonymous" integrity="sha384-wufzsAJDaHPcDP+EYv75RwnCpBuhhspd32Zuihb8mlmiAWUF3mn6K+Mv1RbdOvk+"></script><script src="https://www.google.com/recaptcha/api.js" async="" defer=""></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style type="text/css">.apexcharts-canvas {
+  position: relative;
+  user-select: none;
+  /* cannot give overflow: hidden as it will crop tooltips which overflow outside chart area */
+}
+
+
+/* scrollbar is not visible by default for legend, hence forcing the visibility */
+.apexcharts-canvas ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 6px;
+}
+
+.apexcharts-canvas ::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .5);
+  box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+
+.apexcharts-inner {
+  position: relative;
+}
+
+.apexcharts-text tspan {
+  font-family: inherit;
+}
+
+.legend-mouseover-inactive {
+  transition: 0.15s ease all;
+  opacity: 0.20;
+}
+
+.apexcharts-series-collapsed {
+  opacity: 0;
+}
+
+.apexcharts-tooltip {
+  border-radius: 5px;
+  box-shadow: 2px 2px 6px -4px #999;
+  cursor: default;
+  font-size: 14px;
+  left: 62px;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 12;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-tooltip.apexcharts-active {
+  opacity: 1;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-tooltip.apexcharts-theme-light {
+  border: 1px solid #e3e3e3;
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.apexcharts-tooltip.apexcharts-theme-dark {
+  color: #fff;
+  background: rgba(30, 30, 30, 0.8);
+}
+
+.apexcharts-tooltip * {
+  font-family: inherit;
+}
+
+
+.apexcharts-tooltip-title {
+  padding: 6px;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.apexcharts-tooltip.apexcharts-theme-light .apexcharts-tooltip-title {
+  background: #ECEFF1;
+  border-bottom: 1px solid #ddd;
+}
+
+.apexcharts-tooltip.apexcharts-theme-dark .apexcharts-tooltip-title {
+  background: rgba(0, 0, 0, 0.7);
+  border-bottom: 1px solid #333;
+}
+
+.apexcharts-tooltip-text-value,
+.apexcharts-tooltip-text-z-value {
+  display: inline-block;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.apexcharts-tooltip-text-z-label:empty,
+.apexcharts-tooltip-text-z-value:empty {
+  display: none;
+}
+
+.apexcharts-tooltip-text-value,
+.apexcharts-tooltip-text-z-value {
+  font-weight: 600;
+}
+
+.apexcharts-tooltip-marker {
+  width: 12px;
+  height: 12px;
+  position: relative;
+  top: 0px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.apexcharts-tooltip-series-group {
+  padding: 0 10px;
+  display: none;
+  text-align: left;
+  justify-content: left;
+  align-items: center;
+}
+
+.apexcharts-tooltip-series-group.apexcharts-active .apexcharts-tooltip-marker {
+  opacity: 1;
+}
+
+.apexcharts-tooltip-series-group.apexcharts-active,
+.apexcharts-tooltip-series-group:last-child {
+  padding-bottom: 4px;
+}
+
+.apexcharts-tooltip-series-group-hidden {
+  opacity: 0;
+  height: 0;
+  line-height: 0;
+  padding: 0 !important;
+}
+
+.apexcharts-tooltip-y-group {
+  padding: 6px 0 5px;
+}
+
+.apexcharts-tooltip-candlestick {
+  padding: 4px 8px;
+}
+
+.apexcharts-tooltip-candlestick>div {
+  margin: 4px 0;
+}
+
+.apexcharts-tooltip-candlestick span.value {
+  font-weight: bold;
+}
+
+.apexcharts-tooltip-rangebar {
+  padding: 5px 8px;
+}
+
+.apexcharts-tooltip-rangebar .category {
+  font-weight: 600;
+  color: #777;
+}
+
+.apexcharts-tooltip-rangebar .series-name {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.apexcharts-xaxistooltip {
+  opacity: 0;
+  padding: 9px 10px;
+  pointer-events: none;
+  color: #373d3f;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 2px;
+  position: absolute;
+  z-index: 10;
+  background: #ECEFF1;
+  border: 1px solid #90A4AE;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-xaxistooltip.apexcharts-theme-dark {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.apexcharts-xaxistooltip:after,
+.apexcharts-xaxistooltip:before {
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.apexcharts-xaxistooltip:after {
+  border-color: rgba(236, 239, 241, 0);
+  border-width: 6px;
+  margin-left: -6px;
+}
+
+.apexcharts-xaxistooltip:before {
+  border-color: rgba(144, 164, 174, 0);
+  border-width: 7px;
+  margin-left: -7px;
+}
+
+.apexcharts-xaxistooltip-bottom:after,
+.apexcharts-xaxistooltip-bottom:before {
+  bottom: 100%;
+}
+
+.apexcharts-xaxistooltip-top:after,
+.apexcharts-xaxistooltip-top:before {
+  top: 100%;
+}
+
+.apexcharts-xaxistooltip-bottom:after {
+  border-bottom-color: #ECEFF1;
+}
+
+.apexcharts-xaxistooltip-bottom:before {
+  border-bottom-color: #90A4AE;
+}
+
+.apexcharts-xaxistooltip-bottom.apexcharts-theme-dark:after {
+  border-bottom-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-xaxistooltip-bottom.apexcharts-theme-dark:before {
+  border-bottom-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-xaxistooltip-top:after {
+  border-top-color: #ECEFF1
+}
+
+.apexcharts-xaxistooltip-top:before {
+  border-top-color: #90A4AE;
+}
+
+.apexcharts-xaxistooltip-top.apexcharts-theme-dark:after {
+  border-top-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-xaxistooltip-top.apexcharts-theme-dark:before {
+  border-top-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-xaxistooltip.apexcharts-active {
+  opacity: 1;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-yaxistooltip {
+  opacity: 0;
+  padding: 4px 10px;
+  pointer-events: none;
+  color: #373d3f;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 2px;
+  position: absolute;
+  z-index: 10;
+  background: #ECEFF1;
+  border: 1px solid #90A4AE;
+}
+
+.apexcharts-yaxistooltip.apexcharts-theme-dark {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.apexcharts-yaxistooltip:after,
+.apexcharts-yaxistooltip:before {
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.apexcharts-yaxistooltip:after {
+  border-color: rgba(236, 239, 241, 0);
+  border-width: 6px;
+  margin-top: -6px;
+}
+
+.apexcharts-yaxistooltip:before {
+  border-color: rgba(144, 164, 174, 0);
+  border-width: 7px;
+  margin-top: -7px;
+}
+
+.apexcharts-yaxistooltip-left:after,
+.apexcharts-yaxistooltip-left:before {
+  left: 100%;
+}
+
+.apexcharts-yaxistooltip-right:after,
+.apexcharts-yaxistooltip-right:before {
+  right: 100%;
+}
+
+.apexcharts-yaxistooltip-left:after {
+  border-left-color: #ECEFF1;
+}
+
+.apexcharts-yaxistooltip-left:before {
+  border-left-color: #90A4AE;
+}
+
+.apexcharts-yaxistooltip-left.apexcharts-theme-dark:after {
+  border-left-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-yaxistooltip-left.apexcharts-theme-dark:before {
+  border-left-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-yaxistooltip-right:after {
+  border-right-color: #ECEFF1;
+}
+
+.apexcharts-yaxistooltip-right:before {
+  border-right-color: #90A4AE;
+}
+
+.apexcharts-yaxistooltip-right.apexcharts-theme-dark:after {
+  border-right-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-yaxistooltip-right.apexcharts-theme-dark:before {
+  border-right-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-yaxistooltip.apexcharts-active {
+  opacity: 1;
+}
+
+.apexcharts-yaxistooltip-hidden {
+  display: none;
+}
+
+.apexcharts-xcrosshairs,
+.apexcharts-ycrosshairs {
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-xcrosshairs.apexcharts-active,
+.apexcharts-ycrosshairs.apexcharts-active {
+  opacity: 1;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-ycrosshairs-hidden {
+  opacity: 0;
+}
+
+.apexcharts-selection-rect {
+  cursor: move;
+}
+
+.svg_select_boundingRect, .svg_select_points_rot {
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
+.apexcharts-selection-rect + g .svg_select_boundingRect,
+.apexcharts-selection-rect + g .svg_select_points_rot {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.apexcharts-selection-rect + g .svg_select_points_l,
+.apexcharts-selection-rect + g .svg_select_points_r {
+  cursor: ew-resize;
+  opacity: 1;
+  visibility: visible;
+}
+
+.svg_select_points {
+  fill: #efefef;
+  stroke: #333;
+  rx: 2;
+}
+
+.apexcharts-svg.apexcharts-zoomable.hovering-zoom {
+  cursor: crosshair
+}
+
+.apexcharts-svg.apexcharts-zoomable.hovering-pan {
+  cursor: move
+}
+
+.apexcharts-zoom-icon,
+.apexcharts-zoomin-icon,
+.apexcharts-zoomout-icon,
+.apexcharts-reset-icon,
+.apexcharts-pan-icon,
+.apexcharts-selection-icon,
+.apexcharts-menu-icon,
+.apexcharts-toolbar-custom-icon {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  line-height: 24px;
+  color: #6E8192;
+  text-align: center;
+}
+
+.apexcharts-zoom-icon svg,
+.apexcharts-zoomin-icon svg,
+.apexcharts-zoomout-icon svg,
+.apexcharts-reset-icon svg,
+.apexcharts-menu-icon svg {
+  fill: #6E8192;
+}
+
+.apexcharts-selection-icon svg {
+  fill: #444;
+  transform: scale(0.76)
+}
+
+.apexcharts-theme-dark .apexcharts-zoom-icon svg,
+.apexcharts-theme-dark .apexcharts-zoomin-icon svg,
+.apexcharts-theme-dark .apexcharts-zoomout-icon svg,
+.apexcharts-theme-dark .apexcharts-reset-icon svg,
+.apexcharts-theme-dark .apexcharts-pan-icon svg,
+.apexcharts-theme-dark .apexcharts-selection-icon svg,
+.apexcharts-theme-dark .apexcharts-menu-icon svg,
+.apexcharts-theme-dark .apexcharts-toolbar-custom-icon svg {
+  fill: #f3f4f5;
+}
+
+.apexcharts-canvas .apexcharts-zoom-icon.apexcharts-selected svg,
+.apexcharts-canvas .apexcharts-selection-icon.apexcharts-selected svg,
+.apexcharts-canvas .apexcharts-reset-zoom-icon.apexcharts-selected svg {
+  fill: #008FFB;
+}
+
+.apexcharts-theme-light .apexcharts-selection-icon:not(.apexcharts-selected):hover svg,
+.apexcharts-theme-light .apexcharts-zoom-icon:not(.apexcharts-selected):hover svg,
+.apexcharts-theme-light .apexcharts-zoomin-icon:hover svg,
+.apexcharts-theme-light .apexcharts-zoomout-icon:hover svg,
+.apexcharts-theme-light .apexcharts-reset-icon:hover svg,
+.apexcharts-theme-light .apexcharts-menu-icon:hover svg {
+  fill: #333;
+}
+
+.apexcharts-selection-icon,
+.apexcharts-menu-icon {
+  position: relative;
+}
+
+.apexcharts-reset-icon {
+  margin-left: 5px;
+}
+
+.apexcharts-zoom-icon,
+.apexcharts-reset-icon,
+.apexcharts-menu-icon {
+  transform: scale(0.85);
+}
+
+.apexcharts-zoomin-icon,
+.apexcharts-zoomout-icon {
+  transform: scale(0.7)
+}
+
+.apexcharts-zoomout-icon {
+  margin-right: 3px;
+}
+
+.apexcharts-pan-icon {
+  transform: scale(0.62);
+  position: relative;
+  left: 1px;
+  top: 0px;
+}
+
+.apexcharts-pan-icon svg {
+  fill: #fff;
+  stroke: #6E8192;
+  stroke-width: 2;
+}
+
+.apexcharts-pan-icon.apexcharts-selected svg {
+  stroke: #008FFB;
+}
+
+.apexcharts-pan-icon:not(.apexcharts-selected):hover svg {
+  stroke: #333;
+}
+
+.apexcharts-toolbar {
+  position: absolute;
+  z-index: 11;
+  max-width: 176px;
+  text-align: right;
+  border-radius: 3px;
+  padding: 0px 6px 2px 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.apexcharts-menu {
+  background: #fff;
+  position: absolute;
+  top: 100%;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 3px;
+  right: 10px;
+  opacity: 0;
+  min-width: 110px;
+  transition: 0.15s ease all;
+  pointer-events: none;
+}
+
+.apexcharts-menu.apexcharts-menu-open {
+  opacity: 1;
+  pointer-events: all;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-menu-item {
+  padding: 6px 7px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.apexcharts-theme-light .apexcharts-menu-item:hover {
+  background: #eee;
+}
+
+.apexcharts-theme-dark .apexcharts-menu {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .apexcharts-canvas:hover .apexcharts-toolbar {
+    opacity: 1;
+  }
+}
+
+.apexcharts-datalabel.apexcharts-element-hidden {
+  opacity: 0;
+}
+
+.apexcharts-pie-label,
+.apexcharts-datalabels,
+.apexcharts-datalabel,
+.apexcharts-datalabel-label,
+.apexcharts-datalabel-value {
+  cursor: default;
+  pointer-events: none;
+}
+
+.apexcharts-pie-label-delay {
+  opacity: 0;
+  animation-name: opaque;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+.apexcharts-canvas .apexcharts-element-hidden {
+  opacity: 0;
+}
+
+.apexcharts-hide .apexcharts-series-points {
+  opacity: 0;
+}
+
+.apexcharts-gridline,
+.apexcharts-annotation-rect,
+.apexcharts-tooltip .apexcharts-marker,
+.apexcharts-area-series .apexcharts-area,
+.apexcharts-line,
+.apexcharts-zoom-rect,
+.apexcharts-toolbar svg,
+.apexcharts-area-series .apexcharts-series-markers .apexcharts-marker.no-pointer-events,
+.apexcharts-line-series .apexcharts-series-markers .apexcharts-marker.no-pointer-events,
+.apexcharts-radar-series path,
+.apexcharts-radar-series polygon {
+  pointer-events: none;
+}
+
+
+/* markers */
+
+.apexcharts-marker {
+  transition: 0.15s ease all;
+}
+
+@keyframes opaque {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/* Resize generated styles */
+
+@keyframes resizeanim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.resize-triggers {
+  animation: 1ms resizeanim;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.resize-triggers,
+.resize-triggers>div,
+.contract-trigger:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.resize-triggers>div {
+  background: #eee;
+  overflow: auto;
+}
+
+.contract-trigger:before {
+  width: 200%;
+  height: 200%;
+}</style></head>
+<body>
+
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-2HN6EN2JMF"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-2HN6EN2JMF');
+  </script>
+<div id="root">
+<div class="app">
+<div class="header">
+<div class="header-row">
+<div class="sidebar">
+<a href="/" class="logotype">
+<img src="/images/logo.png?v=3" alt="Trix">
+</a>
+</div>
+<div class="content  noauth  ">
+<div class="menu">
+<a href="/" class="dnone ">Главная</a>
+<a href="/faq" class="dnone ">FAQ</a>
+</div>
+<div class="right">
+<div class="social">
+<a target="_blank" href="https://vk.com/club206440707">
+<img src="/icons/header/vk.svg" alt="Вконтакте">
+</a>
+<a target="_blank" href="https://t.me/TRIXCASH">
+<img src="/icons/tgGradient.png" alt="Telegram">
+</a>
+</div>
+<div class="auth">
+<span class="icon">
+<img src="/icons/header/auth.svg" alt="Вход / Регистрация">
+</span>
+Войти
+</div>
+</div>
+</div>
+</div>
+</div> <div class="row">
+<div class="sidebar">
+<div class="sidebar_left">
+<div class="title">
+<img src="/icons/sidebar/games.svg" alt="Режимы игры">
+Режимы игры
+</div>
+<div class="flex">
+<a href="/dice/bonus" class="">
+<span class="icon">
+<img src="/icons/sidebar/dice.svg" alt="Dice">
+</span>
+Bonus Dice
+</a>
+<a href="/dice" class="">
+<span class="icon">
+<img src="/icons/sidebar/dice.svg" alt="Dice">
+</span>
+Classic Dice
+</a>
+<a href="/crazytime" class="">
+<span class="icon">
+<img src="/icons/sidebar/passkey.svg?v=12" alt="Crazytime" style="
+        width: 20px;
+        
+        margin-top: 13px;
+    ">
+</span>
+Crazytime
+</a>
+<a href="/megawheel" class="">
+<span class="icon">
+<img src="/icons/sidebar/megawheel.svg" alt="MegaWheel" style="
+        width: 28px;
+        margin-top: 9px;
+    ">
+</span>
+MegaWheel
+</a>
+<a href="/bubbles" class="">
+<span class="icon">
+<img src="/icons/sidebar/stax.svg" alt="bubbles">
+</span>
+Bubbles
+</a>
+<a href="/x100" class="">
+<span class="icon">
+<img src="/icons/sidebar/x100.svg" alt="x100" style="
+        width: 28px;
+        margin-top: 9px;
+    ">
+</span>
+x100
+</a>
+<a href="/mines" class="active">
+<span class="icon">
+<img src="/icons/sidebar/mines.svg" alt="Mines">
+</span>
+Mines
+</a>
+<a href="/popit" class="">
+<span class="icon">
+<img src="/images/vectorPopit.svg?v=4" style="margin-top: 10px;filter: brightness(0);" alt="popit">
+</span>
+Popit
+</a>
+<a href="/luckywheel" class="">
+<span class="icon">
+<img src="/images/games/free-icon-clover-2996995.svg" alt="LuckyWheel" style="
+        width: 20px;
+        
+        margin-top: 13px;
+    ">
+</span>
+LuckyWheel
+</a>
+<a href="/hotline" class="">
+<span class="icon">
+<img src="/icons/sidebar/hotline.svg" alt="Hotline">
+</span>
+Hotline
+</a>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="mines-game">
+<div class="mines">
+<div class="title">
+<img src="/icons/mines.svg" alt="Mines">
+Mines
+</div>
+<div class="flex">
+<div class="block">
+<div class="group">
+<span class="groupname">Количество бомб:</span>
+<span class="irs irs--round js-irs-0 irs-with-grid"><span class="irs"><span class="irs-line" tabindex="0"></span><span class="irs-min" style="visibility: visible;">2</span><span class="irs-max" style="visibility: visible;">24</span><span class="irs-from" style="visibility: hidden;">0</span><span class="irs-to" style="visibility: hidden;">0</span><span class="irs-single" style="left: 4.85729%;">3</span></span><span class="irs-grid" style="width: 96.0539%; left: 1.87304%;"><span class="irs-grid-pol" style="left: 0%"></span><span class="irs-grid-text js-grid-text-0" style="left: 0%; margin-left: -1.14374%;">2</span><span class="irs-grid-pol small" style="left: 20%"></span><span class="irs-grid-pol small" style="left: 15%"></span><span class="irs-grid-pol small" style="left: 10%"></span><span class="irs-grid-pol small" style="left: 5%"></span><span class="irs-grid-pol" style="left: 25%"></span><span class="irs-grid-text js-grid-text-1" style="left: 25%; visibility: visible; margin-left: -1.17766%;">8</span><span class="irs-grid-pol small" style="left: 45%"></span><span class="irs-grid-pol small" style="left: 40%"></span><span class="irs-grid-pol small" style="left: 35%"></span><span class="irs-grid-pol small" style="left: 30%"></span><span class="irs-grid-pol" style="left: 50%"></span><span class="irs-grid-text js-grid-text-2" style="left: 50%; visibility: visible; margin-left: -1.59281%;">13</span><span class="irs-grid-pol small" style="left: 70%"></span><span class="irs-grid-pol small" style="left: 65%"></span><span class="irs-grid-pol small" style="left: 60%"></span><span class="irs-grid-pol small" style="left: 55%"></span><span class="irs-grid-pol" style="left: 75%"></span><span class="irs-grid-text js-grid-text-3" style="left: 75%; visibility: visible; margin-left: -1.5959%;">19</span><span class="irs-grid-pol small" style="left: 95%"></span><span class="irs-grid-pol small" style="left: 90%"></span><span class="irs-grid-pol small" style="left: 85%"></span><span class="irs-grid-pol small" style="left: 80%"></span><span class="irs-grid-pol" style="left: 100%"></span><span class="irs-grid-text js-grid-text-4" style="left: 100%; margin-left: -1.83636%;">24</span></span><span class="irs-bar irs-bar--single" style="left: 0px; width: 6.33912%;"></span><span class="irs-shadow shadow-single" style="display: none;"></span><span class="irs-handle single" style="left: 4.36609%;"><i></i><i></i><i></i></span></span><input class="js-range-slider irs-hidden-input" type="hidden" value="3" tabindex="-1" readonly="">
+</div>
+<div class="group">
+<span class="groupname">Размер игры:</span>
+<div class="choices">
+<div class="badges">
+<span style="pointer-events: none;" disabled="" data-sumupdate="1">Max</span>
+<span style="pointer-events: none;" disabled="" data-sumupdate="2">Min</span>
+</div>
+<input style="pointer-events: none;" disabled="" name="amount" type="number" value="1">
+<div class="badges">
+<span style="pointer-events: none;" disabled="" data-sumupdate="3">X2</span>
+<span style="pointer-events: none;" disabled="" data-sumupdate="4">/2</span>
+</div>
+</div>
+</div>
+<button class="play disabled">
+Авторизуйтесь
+</button>
+</div>
+<div class="block">
+<div class="game">
+<span class="disabled"></span>
+<span class="disabled"></span>
+<span class="disabled"></span>
+ <span class="disabled"></span>
+<span class="disabled"></span>
+<span class="disabled"></span>
+<span class="disabled"></span>
+<span class="disabled"></span>
+<span class="disabled"></span>
+<span class="disabled"></span>
+<span class="disabled"></span>
+<span class="disabled"></span>
+<span class="disabled"></span>
+<span class="disabled"></span>
+<span class="disabled"></span>
+<span class="disabled"></span>
+<span class="disabled"></span>
+<span class="disabled"></span>
+<span class="disabled"></span>
+<span class="disabled"></span>
+<span class="disabled"></span>
+<span class="disabled"></span>
+<span class="disabled"></span>
+<span class="disabled"></span>
+<span class="disabled"></span>
+</div>
+</div>
+<div class="block">
+<div class="slider">
+<div class="arrow arrow-left">
+<img src="/icons/arrow.svg" alt="Назад">
+</div>
+<div class="steps"><div class="step false">
+                <div class="badge">Шаг 1</div>
+                <div class="title">1.08</div>
+                <div class="desc">x1.08</div>
+            </div><div class="step false">
+                <div class="badge">Шаг 2</div>
+                <div class="title">1.24</div>
+                <div class="desc">x1.24</div>
+            </div></div>
+<div class="arrow arrow-right">
+<img src="/icons/arrow.svg" class="right" alt="Вперёд">
+</div>
+</div>
+<div id="result"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="history livefeed-history-centrifuge">
+<div class="title">
+<img src="/icons/history.svg" alt="История">
+История
+</div>
+<div class="table">
+<div class="head">
+<span>Игра</span>
+<span>Логин</span>
+<span>Сумма</span>
+<span>Коэффициент</span>
+<span>Результат</span>
+</div>
+<div class="games">
+    <div class="game">
+        <span>
+            <img src="/icons/dice.svg" alt="dice">
+        </span>
+        <span>4046***</span>
+        <span>25.00₽</span>
+        <span>x20</span>
+        <span class="danger">0</span>
+    </div>
+    <div class="game">
+        <span>
+            <img src="/icons/dice.svg" alt="dice">
+        </span>
+        <span>2486***</span>
+        <span>1.00₽</span>
+        <span>x5</span>
+        <span class="danger">0</span>
+    </div>
+    <div class="game">
+        <span>
+            <img src="/icons/mines.svg" alt="mines">
+        </span>
+        <span>5419***</span>
+        <span>1.00₽</span>
+        <span>x2.26</span>
+        <span class="danger">0</span>
+    </div>
+    <div class="game">
+        <span>
+            <img src="/icons/mines.svg" alt="mines">
+        </span>
+        <span>Yarm***</span>
+        <span>1.00₽</span>
+        <span>x3.96</span>
+        <span class="danger">0</span>
+    </div>
+    <div class="game">
+        <span>
+            <img src="/icons/dice.svg" alt="dice">
+        </span>
+        <span>2082***</span>
+        <span>1.00₽</span>
+        <span>x4.17</span>
+        <span class="success">4.17</span>
+    </div>
+    <div class="game">
+        <span>
+            <img src="/icons/popit.svg" alt="popit">
+        </span>
+        <span>andr***</span>
+        <span>1.00₽</span>
+        <span>x0</span>
+        <span class="danger">0</span>
+    </div>
+    <div class="game">
+        <span>
+            <img src="/icons/dice.svg" alt="dice">
+        </span>
+        <span>4046***</span>
+        <span>25.00₽</span>
+        <span>x20</span>
+        <span class="danger">0</span>
+    </div>
+    <div class="game">
+        <span>
+            <img src="/icons/dice.svg" alt="dice">
+        </span>
+        <span>5797***</span>
+        <span>8.00₽</span>
+        <span>x4.21</span>
+        <span class="danger">0</span>
+    </div>
+    <div class="game">
+        <span>
+            <img src="/icons/dice.svg" alt="dice">
+        </span>
+        <span>4046***</span>
+        <span>25.00₽</span>
+        <span>x20</span>
+        <span class="danger">0</span>
+    </div>
+    <div class="game">
+        <span>
+            <img src="/icons/popit.svg" alt="popit">
+        </span>
+        <span>3016***</span>
+        <span>25.00₽</span>
+        <span>x0</span>
+        <span class="danger">0</span>
+    </div>
+    <div class="game">
+        <span>
+            <img src="/icons/dice.svg" alt="dice">
+        </span>
+        <span>Sher***</span>
+        <span>1.00₽</span>
+        <span>x2.2</span>
+        <span class="success">2.2</span>
+    </div>
+    <div class="game">
+        <span>
+            <img src="/icons/dice.svg" alt="dice">
+        </span>
+        <span>Shah***</span>
+        <span>62.85₽</span>
+        <span>x3.88</span>
+        <span class="danger">0</span>
+    </div>
+    <div class="game">
+        <span>
+            <img src="/icons/dice.svg" alt="dice">
+        </span>
+        <span>4046***</span>
+        <span>25.00₽</span>
+        <span>x20</span>
+        <span class="danger">0</span>
+    </div>
+    <div class="game">
+        <span>
+            <img src="/icons/dice.svg" alt="dice">
+        </span>
+        <span>2486***</span>
+        <span>1.00₽</span>
+        <span>x5</span>
+        <span class="danger">0</span>
+    </div>
+    <div class="game">
+        <span>
+            <img src="/icons/dice.svg" alt="dice">
+        </span>
+        <span>Vera***</span>
+        <span>4.00₽</span>
+        <span>x10</span>
+        <span class="danger">0</span>
+    </div>
+    <div class="game">
+        <span>
+            <img src="/icons/dice.svg" alt="dice">
+        </span>
+        <span>2082***</span>
+        <span>1.00₽</span>
+        <span>x4.17</span>
+        <span class="danger">0</span>
+    </div>
+    <div class="game">
+        <span>
+            <img src="/icons/mines.svg" alt="mines">
+        </span>
+        <span>5805***</span>
+        <span>1.00₽</span>
+        <span>x11.88</span>
+        <span class="danger">0</span>
+    </div>
+    <div class="game">
+        <span>
+            <img src="/icons/dice.svg" alt="dice">
+        </span>
+        <span>4046***</span>
+        <span>25.00₽</span>
+        <span>x20</span>
+        <span class="danger">0</span>
+    </div>
+    <div class="game">
+        <span>
+            <img src="/icons/dice.svg" alt="dice">
+        </span>
+        <span>6435***</span>
+        <span>5.00₽</span>
+        <span>x2</span>
+        <span class="danger">0</span>
+    </div>
+    <div class="game">
+        <span>
+            <img src="/icons/dice.svg" alt="dice">
+        </span>
+        <span>4046***</span>
+        <span>25.00₽</span>
+        <span>x20</span>
+        <span class="danger">0</span>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+</div>
+</div>
+<div style="display: none">
+<div class="box-modal" id="minesModal">
+<div class="box-modal_close arcticmodal-close">
+<img class="close" src="/icons/close.svg" alt="Закрыть окно">
+</div>
+<div class="title">Проверка игры</div>
+<div class="fair"></div>
+</div>
+</div>
+<script>
+
+    window.minesData = {
+        xs: {"2":[1.04,1.13,1.24,1.36,1.5,1.67,1.87,2.1,2.38,2.72,3.14,3.66,4.32,5.19,6.34,7.92,10.18,13.58,19.01,28.51,47.51,95.01,285.01],"3":[1.08,1.24,1.43,1.64,1.92,2.26,2.68,3.22,3.9,4.81,6,7.65,9.94,13.24,18.21,26.02,39.03,62.43,109.26,218.51,546.26,2185.01],"4":[1.14,1.36,1.64,2.01,2.49,3.11,3.93,5.05,6.61,8.81,12.01,16.82,24.28,36.42,57.23,95.38,171.68,343.36,801.17,2403.5,12017.5],"5":[1.19,1.5,1.92,2.49,3.26,4.34,5.9,8.16,11.56,16.82,25.21,39.23,63.74,109.26,200.3,400.59,901.31,2403.5,8412.25,50473.5],"6":[1.25,1.67,2.26,3.11,4.34,6.2,9.06,13.59,21.01,33.62,56.03,98.05,182.09,364.17,801.17,2002.92,6008.76,24035.01,168245.01],"7":[1.32,1.87,2.68,3.93,5.9,9.06,14.35,23.48,39.92,70.97,133.07,266.12,576.6,1383.84,3805.55,12685.14,57083.13,456665.01],"8":[1.41,2.1,3.22,5.05,8.16,13.59,23.48,42.28,79.84,159.68,342.16,798.37,2075.76,6227.26,22833.26,114166.26,1027496.26],"9":[1.49,2.38,3.9,6.61,11.56,21.01,39.92,79.84,169.66,387.78,969.45,2714.44,8821.94,35287.75,194082.63,1940826.25],"10":[1.59,2.72,4.81,8.81,16.82,33.62,70.97,159.68,387.78,1034.08,3102.23,10857.78,47050.34,282302,3105322],"11":[1.7,3.14,6,12.01,25.21,56.03,133.07,342.16,969.45,3102.23,11633.33,54288.85,352877.51,4234530.01],"12":[1.83,3.66,7.65,16.82,39.23,98.05,266.12,798.37,2714.44,10857.78,54288.85,380021.93,4940285],"13":[1.99,4.32,9.94,24.28,63.74,182.09,576.6,2075.75,8821.94,47050.34,352877.5,4940285],"14":[2.17,5.19,13.24,36.42,109.25,364.17,1383.84,6227.25,35287.75,282302,4234530],"15":[2.38,6.34,18.21,57.23,200.3,801.17,3805.55,22833.25,194082.63,3105322],"16":[2.64,7.92,26.02,95.38,400.59,2002.92,12685.14,114166.25,1940826.25],"17":[2.97,10.18,39.03,171.68,901.31,6008.75,57083.13,1027496.25],"18":[3.4,13.58,62.43,343.36,2403.5,24035,456665],"19":[3.96,19,109.25,801.17,8412.25,168245],"20":[4.75,28.5,218.5,2403.5,50473.5],"21":[5.94,47.5,546.25,12017.5],"22":[7.92,95,2185],"23":[11.88,285],"24":[23.75]},
+        mines: 3,
+        active: true
+    };
+
+    
+</script>
+</div>
+</div>
+</div>
+<div class="footer">
+<div class="main">
+<a href="/" class="logotype">
+<img src="/images/logo.png?v=3" alt="Trix">
+</a>
+<span class="domain">
+Trix - 2022
+</span>
+<div class="menu">
+<a href="/terms" class="">
+Пользовательское соглашение
+</a>
+<a href="/policy" class="">
+ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ
+</a>
+<a href="https://vk.com/trixbar">
+ТЕХНИЧЕСКАЯ ПОДДЕРЖКА
+</a>
+</div>
+</div>
+<a href="//freekassa.ru/" target="_blank" rel="noopener noreferrer">
+<img src="//cdn.freekassa.ru/banners/small-white-2.png" title="Прием платежей на сайте для физических лиц и т.д.">
+</a>
+</div> </div>
+<div style="display: none;">
+<div class="box-modal" id="signinModal">
+<div class="box-modal_close arcticmodal-close">
+<img class="close" src="/icons/close.svg" alt="Закрыть окно">
+</div>
+<div class="title">Авторизация</div>
+<div class="auth-modal">
+<form method="POST" action="/auth/login">
+<input type="hidden" name="_token" value="5z7h1boZzN52fmTHEvZxvBYOCNFIVJ95mg4AZIls">
+<div class="group">
+<input name="name" required="" placeholder="Логин" type="text">
+</div>
+<div class="group">
+<input name="password" required="" placeholder="Пароль" type="password">
+</div>
+<div class="flex">
+<button type="submit" class="auth">
+Войти
+<img src="/icons/header/auth.svg" alt="Вход / Регистрация">
+</button>
+<div class="social">
+<span>ИЛИ</span>
+<a href="/auth/vk/redirect" class="vk">
+<img src="/icons/vk.svg" alt="Вконтакте">
+</a>
+</div>
+</div>
+</form>
+<div class="description">
+Ещё нет аккаунта ?
+</div>
+<button class="warning">Создать аккаунт</button>
+</div>
+</div>
+<div class="box-modal" id="signupModal">
+<div class="box-modal_close arcticmodal-close">
+<img class="close" src="/icons/close.svg" alt="Закрыть окно">
+</div>
+<div class="title">Регистрация</div>
+<div class="auth-modal">
+<form method="POST" action="/auth/register">
+<input type="hidden" name="_token" value="5z7h1boZzN52fmTHEvZxvBYOCNFIVJ95mg4AZIls">
+<div class="group">
+<input name="name" required="" placeholder="Логин" type="text">
+</div>
+<div class="group">
+<input name="password" required="" placeholder="Пароль" type="password">
+</div>
+<div class="group">
+<input name="password_confirmation" required="" placeholder="Повторите пароль" type="password">
+</div>
+<div class="description">
+Создавая аккаунт, вы соглашаетесь с <a href="terms" target="_blanc">пользовательским соглашением</a>
+и <a href="policy" target="_blanc">политикой конфеденциальности</a>.
+</div>
+<div class="flex">
+<button type="submit" class="auth">
+Регистрация
+<img src="/icons/header/auth.svg" alt="Вход / Регистрация">
+</button>
+<div class="social">
+<span>ИЛИ</span>
+<a href="/auth/vk/redirect" class="vk">
+<img src="/icons/vk.svg" alt="Вконтакте">
+</a>
+</div>
+</div>
+</form>
+<div class="description">
+Уже есть аккаунт?
+</div>
+<button class="warning">Войти в аккаунт</button>
+</div>
+</div>
+</div>
+<div style="display: none">
+<div class="box-modal" id="youtubeModal">
+<div class="box-modal_close arcticmodal-close">
+<img class="close" src="/icons/close.svg" alt="Закрыть окно">
+</div>
+<div class="title">Ютуб-канал</div>
+<img src="/images/trixlogo.jpg" style="
+    width: 100%;
+    object-fit: cover;
+    height: 310px;
+    border-radius: 10px;
+    object-position: 0 -50px;
+    display: block;
+    margin-bottom: 15px;
+">
+<div class="youtube-message" style="
+    display: block;
+    margin-bottom: 25px;
+    font-weight: 500;
+    color: black;
+    font-size: 16px; 
+    text-align: justify;
+    line-height: 23px;
+">У нас появился ютуб канал на котором будут выходить ролики ваших любимых ютуберов, а главное каждый день под роликом в 16 00 по мск будет промокод:<br> Сколько лайков на прошлом ролике столько на промокоде активаций.
+<br>Изначально сумма 5 монет но за каждую тысячу человек подписанных на канал с включенным колокольчиком будет прибавляться по 1 рублю к сумме промокода</div>
+<a style="
+    display: flex;
+    height: 45px;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    color: #fff;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 17px;
+    overflow: hidden;
+    background: linear-gradient(90deg,#ff6b6b,#ff8f8f); 
+    margin: auto;
+" href="https://www.youtube.com/channel/UCfop-MS9FmQqiWaWcJVgjhQ" target="_blank" class="ytpromo">Подписаться</a>
+<div class="alert" style="
+    color: #ff6b6b;
+    background-color: rgb(255 107 107 / 16%);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    font-weight: 500;
+    display: block;
+    margin-top: 25px;
+">Предупреждаем, любая накрутка не поможет вам получать промокоды больше</div>
+</div>
+</div>
+<script src="/js/manifest.js?prod=6"></script>
+<script src="/js/vendor.js?prod=6"></script>
+<script src="/js/app.js?prod=6"></script>
+<a rel="noreferrer" style="display:none" id="noreflink"></a>
+
+<svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg></body></html>
